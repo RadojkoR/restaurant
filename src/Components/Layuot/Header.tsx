@@ -6,7 +6,7 @@ import userModel from "../../Interfaces/userModel";
 import { emptyUserState, setLoggedInUser } from "../../Storage/Redux/userAuthSlice";
 import { SD_Roles } from "../../Utility/SD";
 
-let logo = require("../../Assets/Images/eadth.jpg");
+let logo = require("../../Assets/Images/earth.jpg");
 
 function Header() {
   const dispatch = useDispatch();
