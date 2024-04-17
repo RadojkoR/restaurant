@@ -46,6 +46,7 @@ function MenuItemList() {
          });
          setCategoryList(tempCategoryList);
       }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isLoading])
 
     const handleSortClick = (i: number) => {
