@@ -41,10 +41,7 @@ function App() {
       <div className="pb-5" style={{marginTop: "4rem"}}>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route
-            path="/menuItemDetails/:menuItemId"
-            element={<MenuItemDetails />}
-          ></Route>
+          <Route path="/menuItemDetails/:menuItemId" element={<MenuItemDetails />}></Route>
           <Route path="/shoppingCart" element={<ShoppingCart />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>

@@ -6,6 +6,7 @@ import { useRegisterUserMutation } from '../Apis/authApi';
 import apiResponse from '../Interfaces/apiResponse';
 import { useNavigate } from 'react-router-dom';
 import { MainLoader } from '../Components/Page/Common';
+import "../Style/order.css";
 
 function Register() {
     const [registerUser] = useRegisterUserMutation();
@@ -45,7 +46,7 @@ function Register() {
     }
 
   return (
-    <div className="container text-center">
+    <div className="container text-center p-4">
       {loading && < MainLoader />}
       <form method="post" onSubmit={handleSubmit}>
         <h1 className="mt-5">Register</h1>
@@ -98,7 +99,7 @@ function Register() {
           </div>
         </div>
         <div className="mt-5">
-          <button type="submit" className="btn btn-success" disabled={loading}>
+          <button type="submit" className="btn btn-success registerBtn" disabled={loading}>
             Register
           </button>
         </div>

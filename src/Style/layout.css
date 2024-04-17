@@ -1,0 +1,18 @@
+.loginNav {
+    order: none;
+    height: 40px;
+    width: 100px;
+}
+
+.adminDropDownUl li {
+    cursor: pointer;
+}
+
+.cartIcon {
+    font-size: 2rem;
+}
+
+.cartIconNum {
+    top: 19px;
+    left: auto;
+}

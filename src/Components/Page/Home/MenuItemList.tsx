@@ -7,6 +7,7 @@ import MenuItemCard from './MenuItemCard';
 import { menuItemModel } from '../../../Interfaces/Index';
 import { RootState } from '../../../Storage/Redux/store';
 import { SD_SortTypes } from '../../../Utility/SD';
+import "../../../Style/home.css"
 
 function MenuItemList() {
     const [menuItems, setMenuItems] = useState<menuItemModel[]>([]);
@@ -116,22 +117,40 @@ function MenuItemList() {
     }
 
   return (
-    <div className="container row">
-      <div className="my-3">
+    <div className="container-fluid row">
+      <div className="my-3 p-0">
         <ul className="nav w-100 d-flex justify-content-center">
           {categoryList.map((categoryName, index) => (
-            <li className="nav-item" key={index} style={{...(index === 0 && {marginLeft: "auto"})}}>
-              <button className={`nav-link p-0 pb-2 custom-buttons fs-5 ${index === 0 && "active"}`} onClick={() => handleCategoryClick(index)}>
+            <li
+              className="nav-item categoryListItem"
+              key={index}
+              style={{ ...(index === 0 && { marginLeft: "auto" }) }}
+            >
+              <button
+                className={`nav-link p-0 pb-2 custom-buttons fs-5 ${
+                  index === 0 && "active"
+                }`}
+                onClick={() => handleCategoryClick(index)}
+              >
                 {categoryName}
               </button>
             </li>
           ))}
-          <li className="nav-item dropdown" style={{marginLeft: "auto"}}>
-            <div className="nav-link dropdown-toggle text-dark fs-6 border" role='button' data-bs-toggle="dropdown" aria-expanded="false">
+          <li className="nav-item dropdown sortBy">
+            <div
+              className="nav-link dropdown-toggle text-dark border sortByDiv"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               {sortName}
-              <ul className="dropdown-menu">
-                {sortOptions.map((sortType,index)=>(
-                  <li className="dropdown-item" key={index} onClick={()=> handleSortClick(index)}>
+              <ul className="dropdown-menu sortByDropdown">
+                {sortOptions.map((sortType, index) => (
+                  <li
+                    className="dropdown-item"
+                    key={index}
+                    onClick={() => handleSortClick(index)}
+                  >
                     {sortType}
                   </li>
                 ))}

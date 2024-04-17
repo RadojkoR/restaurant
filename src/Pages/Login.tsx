@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { setLoggedInUser } from '../Storage/Redux/userAuthSlice';
 import { useNavigate } from 'react-router-dom';
 import { MainLoader } from '../Components/Page/Common';
+import "../Style/order.css";
 
 function Login() {
   const [error, setError] = useState("")
@@ -50,7 +51,7 @@ function Login() {
   };
 
   return (
-    <div className="container text-center">
+    <div className="container text-center pt-4">
       {loading && <MainLoader />}
       <form method="post" onSubmit={handleSubmit}>
         <h1 className="mt-5">Login</h1>
@@ -81,11 +82,11 @@ function Login() {
         </div>
 
         <div className="mt-2">
-          {error && <p className='text-danger'>{error}</p>}
+          {error && <p className="text-danger">{error}</p>}
           <button
             type="submit"
-            className="btn btn-success"
-            style={{ width: "200px" }}
+            className="btn btn-success loginBtn"
+            // style={{ width: "200px" }}
           >
             Login
           </button>

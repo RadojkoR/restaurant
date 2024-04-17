@@ -1,0 +1,18 @@
+.sortBy {
+    margin-left: auto;
+}
+
+
+@media (max-width: 500px) {
+    .categoryListItem button {
+        font-size: 0.9rem!important;
+    }
+
+    .sortByDiv {
+        font-size: 0.9rem!important;
+    }
+
+    .sortByDropdown li {
+        font-size: 0.8rem;
+    }
+}
