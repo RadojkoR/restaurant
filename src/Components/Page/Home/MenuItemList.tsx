@@ -31,6 +31,7 @@ function MenuItemList() {
         const tempMenuArray = handleFilters(sortName,selectedCategory,searchValue);
         setMenuItems(tempMenuArray)
       }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchValue]);
 
     useEffect(() => {
