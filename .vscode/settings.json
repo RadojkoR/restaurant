@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/c0d873b6-9fc9-4525-b76a-e6bce4e43676/resourceGroups/react.Net-Restorant/providers/Microsoft.Web/sites/worldcuisine",
+    "appService.deploySubpath": "."
+}
