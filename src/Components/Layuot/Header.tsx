@@ -57,7 +57,7 @@ function Header() {
                 <li className="nav-item dropdown d-flex align-items-center">
                   <a
                     className="nav-link dropdown-toggle"
-                    href="#"
+                    href="/"
                     id="navbarDropdown"
                     role="button"
                     data-bs-toggle="dropdown"
