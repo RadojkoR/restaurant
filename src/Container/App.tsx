@@ -29,6 +29,7 @@ function App() {
 
       dispatch(setShoppingCart(data.result?.cartItems));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   useEffect (()=>{
