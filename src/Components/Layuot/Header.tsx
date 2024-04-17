@@ -6,7 +6,7 @@ import userModel from "../../Interfaces/userModel";
 import { emptyUserState, setLoggedInUser } from "../../Storage/Redux/userAuthSlice";
 import { SD_Roles } from "../../Utility/SD";
 
-let logo = require("../../Assets/Images/earth.jpg");
+let logo = require("../../Assets/Images/worldCuisine.jpg");
 
 function Header() {
   const dispatch = useDispatch();
@@ -24,21 +24,26 @@ function Header() {
   };
 
   return (
-    <div>
+    
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
         <div className="container-fluid d-flex align-items-center">
-          <NavLink className="nav-link" aria-current="page" to="/">
+          <NavLink
+            className="nav-link d-flex justify-content-center align-items-center me-5"
+            aria-current="page"
+            to="/"
+          >
             <img
               src={logo}
               style={{ height: "40px" }}
-              className="m-1"
+              className="m-1 rounded-pill"
               alt="Restaurant Logo"
             />
+            <p className="text-light h4 m-0">World Cuisine</p>
           </NavLink>
           <button
             className="navbar-toggler"
             type="button"
-            ata-bs-toggle="collapse"
+            data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
@@ -180,7 +185,7 @@ function Header() {
           </div>
         </div>
       </nav>
-    </div>
+    
   );
 }
 
