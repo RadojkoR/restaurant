@@ -8,6 +8,7 @@ import { toastNotify } from "../Helper";
 import { apiResponse, userModel } from "../Interfaces/Index";
 import { RootState } from "../Storage/Redux/store";
 import { useSelector } from "react-redux";
+import "../Style/menuItemsDetails.css";
 
 function MenuItemDetails() {
   const { menuItemId } = useParams();
@@ -54,8 +55,8 @@ function MenuItemDetails() {
   return (
     <div className="container pt-4 pt-md-5">
       {!isLoading ? (
-        <div className="row">
-          <div className="col-7">
+        <div className="row flex-sm-row flex-column-reverse">
+          <div className="col-12 col-sm-8">
             <h2 className="text-success">{data.result?.name}</h2>
             <span>
               <span
@@ -105,7 +106,7 @@ function MenuItemDetails() {
                   </button>
                 ) : (
                   <button
-                    className="btn btn-success form-control"
+                    className="btn btn-success form-control menuItemDetailBtn"
                     onClick={() => handleAddToCart(data.result?.id)}
                   >
                     Add to Cart
@@ -115,7 +116,7 @@ function MenuItemDetails() {
 
               <div className="col-5 ">
                 <button
-                  className="btn btn-secondary form-control"
+                  className="btn btn-secondary form-control menuItemDetailBtn"
                   onClick={() => navigate(-1)}
                 >
                   Back to Home
@@ -123,13 +124,8 @@ function MenuItemDetails() {
               </div>
             </div>
           </div>
-          <div className="col-5">
-            <img
-              src={data.result?.image}
-              width="100%"
-              style={{ borderRadius: "50%" }}
-              alt="No content"
-            ></img>
+          <div className="col-12 col-sm-4 menuItemDetailsImgContainer">
+            <img src={data.result?.image} alt={data.result?.name}></img>
           </div>
         </div>
       ) : (

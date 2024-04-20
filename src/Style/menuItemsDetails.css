@@ -1,0 +1,17 @@
+.menuItemDetailsImgContainer img {
+    width:100%;
+    border-radius: 50%;
+}
+
+@media (max-width: 576px) {
+    .menuItemDetailsImgContainer {
+        display: flex;
+        justify-content: flex-end!important;
+    }
+    .menuItemDetailsImgContainer img{
+        width:50%;
+        /* margin-right: 0 auto; */
+    }
+    
+}
+
