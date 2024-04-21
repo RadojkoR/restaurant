@@ -1,7 +1,7 @@
 import OrderListProps from './orderListType';
 import { MainLoader } from '../Common';
 import { orderHeaderModel } from '../../../Interfaces/Index';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getStatusColor } from '../../../Helper';
 import "../../../Style/order.css";
 
