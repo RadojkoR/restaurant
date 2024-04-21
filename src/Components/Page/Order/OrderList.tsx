@@ -62,7 +62,7 @@ function OrderList({isLoading, orderData}: OrderListProps) {
 
                     <div className="d-flex align-items-center justify-content-between">
                       <button
-                        className="btn btn-success mt-4 w-50 ms-auto"
+                        className="btn btn-success my-4 w-50 ms-auto"
                         onClick={() =>
                           navigate(
                             "/order/orderDetails/" + orderItem.orderHeaderId
@@ -71,54 +71,6 @@ function OrderList({isLoading, orderData}: OrderListProps) {
                       >
                         Details
                       </button>
-                    </div>
-
-                    {/* <i
-                      className="bi bi-star btn btn-success"
-                      style={{
-                        position: "absolute",
-                        top: "15px",
-                        left: "15px",
-                        padding: "5px 10px",
-                        borderRadius: "3px",
-                        outline: "none !important",
-                        cursor: "pointer",
-                      }}
-                    ></i> */}
-
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: "15px",
-                        right: "15px",
-                      }}
-                    ></div>
-
-                    {/* <i
-                      className="bi bi-cart-plus btn btn-outline-danger"
-                      style={{
-                        position: "absolute",
-                        top: "15px",
-                        right: "15px",
-                        padding: "5px 10px",
-                        borderRadius: "3px",
-                        outline: "none !important",
-                        cursor: "pointer",
-                      }}
-                    ></i> */}
-
-                    <div className="text-center">
-                      <p className="card-title m-0 text-success fs-3"></p>
-                      <p
-                        className="badge bg-secondary"
-                        style={{ fontSize: "12px" }}
-                      ></p>
-                    </div>
-                    <p className="card-text" style={{ textAlign: "center" }}>
-                      {/* {props.menuItem.description} */}
-                    </p>
-                    <div className="row text-center">
-                      {/* <h4>${props.menuItem.price}</h4> */}
                     </div>
                   </div>
                 </div>
