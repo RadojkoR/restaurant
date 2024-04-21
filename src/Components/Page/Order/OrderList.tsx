@@ -42,11 +42,7 @@ function OrderList({isLoading, orderData}: OrderListProps) {
                       <p className="pt-1">Phone:</p>
                       <p className="">{orderItem.pickupPhoneNumber}</p>
                     </div>
-
-                    <div className="d-flex border-bottom align-items-center justify-content-between px-3">
-                      <p className="pt-1">Total:</p>
-                      <p className="">{orderItem.orderTotal}</p>
-                    </div>
+                    
 
                     <div className="d-flex border-bottom align-items-center justify-content-between bg-light px-3">
                       <p className="pt-1">Total:</p>
