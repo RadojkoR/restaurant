@@ -1,8 +1,9 @@
 import OrderListProps from './orderListType';
 import { MainLoader } from '../Common';
 import { orderHeaderModel } from '../../../Interfaces/Index';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getStatusColor } from '../../../Helper';
+import "../../../Style/order.css";
 
 function OrderList({isLoading, orderData}: OrderListProps) {
   const navigate = useNavigate();
@@ -10,53 +11,121 @@ function OrderList({isLoading, orderData}: OrderListProps) {
     <>
       {isLoading && <MainLoader />}
       {!isLoading && (
-        <div className="table p-5">
-          <h1 className="text-success">Orders List</h1>
-          <div className="p-2">
-            <div className="row border">
-              <div className="col-1">ID</div>
-              <div className="col-2">Name</div>
-              <div className="col-2">Phone</div>
-              <div className="col-1">Total</div>
-              <div className="col-1">Items</div>
-              <div className="col-2">Date</div>
-              <div className="col-2">Status</div>
-              <div className="col-1"></div>
-            </div>
+        <>
+          <div className="container-fluid row justify-content-between mb-5 mx-auto">
+            <h1 className="text-success mt-5 mb-3">Orders List</h1>
             {orderData.map((orderItem: orderHeaderModel) => {
-              const badgeColor = getStatusColor(orderItem.status!)
+              const badgeColor = getStatusColor(orderItem.status!);
               return (
-                <div className="row border" key={orderItem.orderHeaderId}>
-                  <div className="col-1">{orderItem.orderHeaderId}</div>
-                  <div className="col-2">{orderItem.pickupName}</div>
-                  <div className="col-2">{orderItem.pickupPhoneNumber}</div>
-                  <div className="col-1">
-                    $ {orderItem.orderTotal!.toFixed(2)}
+                <div
+                  className="card col-md-4 col-12 p-4 pb-0 mb-4 orderListCard"
+                  style={{ boxShadow: "0 1px 7px 0 rgb(0 0 0 / 50%)" }}
+                >
+                  <div
+                    className={`card-header d-flex align-items-center justify-content-between bg-${badgeColor}`}
+                  >
+                    <p className="m-0">Status:</p>
+                    <p className="m-0">{orderItem.status}</p>
                   </div>
-                  <div className="col-1">{orderItem.totalItems}</div>
-                  <div className="col-2">
-                    {new Date(orderItem.orderDate!).toLocaleDateString()}
-                  </div>
-                  <div className="col-2">
-                    <span className={`badge bg-${badgeColor}`}>{orderItem.status}</span>
-                  </div>
-                  <div className="col-1">
-                    <button
-                      className="btn btn-success"
-                      onClick={() =>
-                        navigate(
-                          "/order/orderDetails/" + orderItem.orderHeaderId
-                        )
-                      }
-                    >
-                      Details
-                    </button>
+                  <div className="card-body p-0">
+                    <div className="d-flex border-bottom align-items-center justify-content-between bg-light px-3 ">
+                      <p className="pt-1 mb-1">ID:</p>
+                      <p className="">{orderItem.orderHeaderId}</p>
+                    </div>
+
+                    <div className="d-flex border-bottom align-items-center justify-content-between px-3">
+                      <p className="pt-1 mb-1">Name:</p>
+                      <p className="">{orderItem.pickupName}</p>
+                    </div>
+
+                    <div className="d-flex border-bottom align-items-center justify-content-between bg-light px-3">
+                      <p className="pt-1">Phone:</p>
+                      <p className="">{orderItem.pickupPhoneNumber}</p>
+                    </div>
+
+                    <div className="d-flex border-bottom align-items-center justify-content-between px-3">
+                      <p className="pt-1">Total:</p>
+                      <p className="">{orderItem.orderTotal}</p>
+                    </div>
+
+                    <div className="d-flex border-bottom align-items-center justify-content-between bg-light px-3">
+                      <p className="pt-1">Total:</p>
+                      <p className="">{orderItem.orderTotal!.toFixed(2)}</p>
+                    </div>
+
+                    <div className="d-flex border-bottom align-items-center justify-content-between px-3">
+                      <p className="pt-1">Date:</p>
+                      <p className="">
+                        {new Date(orderItem.orderDate!).toLocaleDateString()}
+                      </p>
+                    </div>
+
+                    <div className="d-flex align-items-center justify-content-between">
+                      <button
+                        className="btn btn-success mt-4 w-50 ms-auto"
+                        onClick={() =>
+                          navigate(
+                            "/order/orderDetails/" + orderItem.orderHeaderId
+                          )
+                        }
+                      >
+                        Details
+                      </button>
+                    </div>
+
+                    {/* <i
+                      className="bi bi-star btn btn-success"
+                      style={{
+                        position: "absolute",
+                        top: "15px",
+                        left: "15px",
+                        padding: "5px 10px",
+                        borderRadius: "3px",
+                        outline: "none !important",
+                        cursor: "pointer",
+                      }}
+                    ></i> */}
+
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "15px",
+                        right: "15px",
+                      }}
+                    ></div>
+
+                    {/* <i
+                      className="bi bi-cart-plus btn btn-outline-danger"
+                      style={{
+                        position: "absolute",
+                        top: "15px",
+                        right: "15px",
+                        padding: "5px 10px",
+                        borderRadius: "3px",
+                        outline: "none !important",
+                        cursor: "pointer",
+                      }}
+                    ></i> */}
+
+                    <div className="text-center">
+                      <p className="card-title m-0 text-success fs-3"></p>
+                      <p
+                        className="badge bg-secondary"
+                        style={{ fontSize: "12px" }}
+                      ></p>
+                    </div>
+                    <p className="card-text" style={{ textAlign: "center" }}>
+                      {/* {props.menuItem.description} */}
+                    </p>
+                    <div className="row text-center">
+                      {/* <h4>${props.menuItem.price}</h4> */}
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
-        </div>
+        </>
       )}
     </>
   );

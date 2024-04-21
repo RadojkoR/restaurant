@@ -1,3 +1,15 @@
 .loginBtn, .registerBtn {
     width: 200px;
 }
+
+/* ORDER LIST */
+.orderListCard {
+    width: 400px!important;
+}
+
+@media (max-width: 850px) {
+    .orderListCard{
+         width: 350px !important;
+        margin: 0 auto
+    }
+}
